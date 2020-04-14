@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.stage.*?>
+
+<Stage xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.app.Controller">
+    <scene>
+        <Scene>
+            <AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #8A0CA9;">
+            <children>
+               <AnchorPane layoutX="100.0" layoutY="50.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffff; -fx-border-color: #6A6568; -fx-border-width: 3;">
+                  <children>
+                     <Button fx:id="B_AdminGrupo" layoutX="154.0" layoutY="154.0" mnemonicParsing="false" onAction="#Btn_AdminGrupo" prefHeight="35.0" prefWidth="292.0" style="-fx-background-color: #ffff; -fx-border-color: #8A0CA9;" text="Administrar Grupos">
+                        <font>
+                           <Font name="Ubuntu Bold" size="18.0" />
+                        </font>
+                     </Button>
+                     <Button fx:id="B_AsigMyP" layoutX="155.0" layoutY="226.0" mnemonicParsing="false" onAction="#Btn_AsigMyP" prefHeight="35.0" prefWidth="291.0" style="-fx-background-color: #ffff; -fx-border-color: #8A0CA9;" text="Asignar Materias y Profesores">
+                        <font>
+                           <Font name="Ubuntu Bold" size="18.0" />
+                        </font>
+                     </Button>
+                     <Label layoutX="57.0" layoutY="38.0" text="Módulo de Asignación de Grupos y Materias a Profesores" textAlignment="CENTER">
+                        <font>
+                           <Font name="AnjaliOldLipi" size="19.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </AnchorPane>
+            </children>
+            </AnchorPane>
+        </Scene>
+    </scene>
+</Stage>
