@@ -1,8 +1,17 @@
 package com.mycompany.app;
 
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 
 public class SQL {
      Connection conectar = null;
@@ -18,13 +27,15 @@ public class SQL {
         }
     }
 
-    public void Consultar() throws SQLException {
+    public boolean ConsultaTGrupo() throws SQLException {
         generarConexion();
-        Statement s= conectar.createStatement();
-        ResultSet rs= s.executeQuery("SELECT * FROM Profesores");
-                while(rs.next()){
-                    System.out.println("Clave:"+rs.getString(1)+" Name: "+rs.getString(2));
-                }
+        Statement s = conectar.createStatement();
+        ResultSet rs = s.executeQuery("SELECT * FROM Grupos");
+        if(rs.getRow()!=0)
+        return TRUE;
+        else{
+            return FALSE;
+        }
     }
     public void Insertar() throws SQLException {
         generarConexion();
@@ -32,16 +43,48 @@ public class SQL {
          s.executeUpdate("INSERT INTO `POO`.`Profesores` (`Profesor_ID`,`Nombre`,`Hrs_Disponible`)\n" +
                  "VALUES ('04','Edith Gonzalez','15')");
     }
-    //Guardar Grupo(String Clave,String Cuatrimestre,String Plan_Est, String[] Materias,String[] Profesores)
-    public void GuardarGrupo(String Clave,String Cuatrimestre,String Plan_Est, String[] Materias,String[] Profesores){
-
+    public void GuardarGrupo(String Clave,String Cuatrimestre,String Plan_Est, String[] Materias,String[] Profesores) throws SQLException {
+        System.out.println(Arrays.toString(Materias));
+        System.out.println(Arrays.toString(Profesores));
+        try {
+            generarConexion();
+            Statement s = conectar.createStatement();
+            int i;
+            for (i = 0; i < 7; i++) {
+                s.executeUpdate("INSERT INTO POO.Grupos (Clave,Cuatrimestre,Plan_ID,Materia_ID,Profesor_ID)\n" +
+                        "VALUES('" + Clave + "','" + Cuatrimestre + "','" + Plan_Est + "','" + Materias[i] + "','" + Profesores[i] + "');");
+                s.close();
+                s = conectar.createStatement();
+            }
+            JOptionPane.showMessageDialog(null,"El Grupo "+ Clave+"\nHa sido GUardado Exitosamente!");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Lo sentimos No fue posible Guardar el Grupo\nIntente de nuevo");
+        }
     }
-    public void EliminarGrupo(String Clave_ID){
 
-    }
-    public void EditarGrupo(String Clave_ID,String Plan_ID,String Cuatrimestre,String[] Profesores,String[] Materias){
+      public ObservableList<Grupo> ConsultarGrupos() throws SQLException {
+        generarConexion();
+        ObservableList<Grupo> lista = FXCollections.observableArrayList();
+          Statement s= conectar.createStatement();
+          ResultSet rs= s.executeQuery("SELECT Clave,Cuatrimestre,Plan_ID,Profesor_ID,Materia_ID FROM Grupos;");
+          while(rs.next()){
+              lista.add(new Grupo(rs.getString(1),rs.getString(2),rs.getString(3),
+                                  rs.getString(4),rs.getString(5)));
+          }
 
+        return lista;
     }
+    public void EliminarGrupo(String Clave_ID) throws SQLException {
+        try {
+            generarConexion();
+            Statement s = conectar.createStatement();
+            s.executeUpdate("DELETE Grupos.* FROM Grupos WHERE Clave= '" + Clave_ID + "';");
+            JOptionPane.showMessageDialog(null,"Grupo Eliminado Correctamente!");
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"Lo sentimos\nNO fue Posible Borrar el Grupo");
+        }
+    }
+
     public List<Materia> ConsultarMaterias(String Cuatri,String Plan) throws SQLException {
         generarConexion();
         List<Materia> L_Materias= new ArrayList<Materia>();

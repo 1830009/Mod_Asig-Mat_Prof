@@ -18,33 +18,39 @@
                            <Font name="AnjaliOldLipi" size="20.0" />
                         </font>
                      </Label>
-                     <Label layoutX="19.0" layoutY="108.0" text="Clave:">
+                     <Label layoutX="14.0" layoutY="109.0" text="Clave:">
                         <font>
                            <Font name="AnjaliOldLipi" size="16.0" />
                         </font>
                      </Label>
-                     <TextField fx:id="T_Clave" layoutX="146.0" layoutY="114.0" />
-                     <Label layoutX="19.0" layoutY="171.0" text="Cuatrimestre: ">
+                     <TextField fx:id="T_Clave" layoutX="141.0" layoutY="115.0" prefHeight="26.0" prefWidth="100.0" />
+                     <Label layoutX="14.0" layoutY="172.0" text="Cuatrimestre: ">
                         <font>
                            <Font name="AnjaliOldLipi" size="16.0" />
                         </font>
                      </Label>
-                     <TextField fx:id="TM_Cuatri" layoutX="146.0" layoutY="176.0" />
-                     <TextField fx:id="TM_Plan" layoutX="146.0" layoutY="144.0" />
-                     <Label layoutX="19.0" layoutY="142.0" text="Plan de Estudios:">
+                     <TextField fx:id="TM_Cuatri" layoutX="141.0" layoutY="177.0" prefHeight="26.0" prefWidth="100.0" />
+                     <TextField fx:id="TM_Plan" layoutX="141.0" layoutY="145.0" prefHeight="26.0" prefWidth="100.0" />
+                     <Label layoutX="14.0" layoutY="143.0" text="Plan de Estudios:">
                         <font>
                            <Font name="AnjaliOldLipi" size="15.0" />
                         </font>
                      </Label>
-                     <Label layoutX="461.0" layoutY="63.0" text="Materias" />
-                     <Label layoutX="605.0" layoutY="63.0" text="Profesores" />
-                     <TextField fx:id="T_Mat1" editable="false" layoutX="397.0" layoutY="112.0" />
-                     <TextField fx:id="T_Mat2" editable="false" layoutX="397.0" layoutY="144.0" />
-                     <TextField fx:id="T_Mat3" editable="false" layoutX="397.0" layoutY="176.0" />
-                     <TextField fx:id="T_Mat4" editable="false" layoutX="397.0" layoutY="212.0" />
-                     <TextField fx:id="T_Mat5" editable="false" layoutX="397.0" layoutY="246.0" />
-                     <TextField fx:id="T_Mat6" editable="false" layoutX="397.0" layoutY="282.0" />
-                     <TextField fx:id="T_Mat7" editable="false" layoutX="397.0" layoutY="316.0" />
+                     <Label layoutX="400.0" layoutY="63.0" text="Materias :">
+                        <font>
+                           <Font name="Ubuntu" size="25.0" />
+                        </font></Label>
+                     <Label layoutX="605.0" layoutY="63.0" text="Profesores :">
+                        <font>
+                           <Font name="Ubuntu" size="25.0" />
+                        </font></Label>
+                     <TextField fx:id="T_Mat1" editable="false" layoutX="328.0" layoutY="112.0" prefHeight="26.0" prefWidth="240.0" />
+                     <TextField fx:id="T_Mat2" editable="false" layoutX="328.0" layoutY="144.0" prefHeight="26.0" prefWidth="240.0" />
+                     <TextField fx:id="T_Mat3" editable="false" layoutX="328.0" layoutY="176.0" prefHeight="26.0" prefWidth="240.0" />
+                     <TextField fx:id="T_Mat4" editable="false" layoutX="328.0" layoutY="212.0" prefHeight="26.0" prefWidth="240.0" />
+                     <TextField fx:id="T_Mat5" editable="false" layoutX="328.0" layoutY="246.0" prefHeight="26.0" prefWidth="240.0" />
+                     <TextField fx:id="T_Mat6" editable="false" layoutX="328.0" layoutY="282.0" prefHeight="26.0" prefWidth="240.0" />
+                     <TextField fx:id="T_Mat7" editable="false" layoutX="328.0" layoutY="316.0" prefHeight="26.0" prefWidth="240.0" />
                      <ChoiceBox fx:id="Ch_Prof1" layoutX="585.0" layoutY="112.0" prefHeight="26.0" prefWidth="212.0" />
                      <ChoiceBox fx:id="Ch_Prof2" layoutX="585.0" layoutY="144.0" prefHeight="26.0" prefWidth="212.0" />
                      <ChoiceBox fx:id="Ch_Prof3" layoutX="585.0" layoutY="175.0" prefHeight="26.0" prefWidth="212.0" />
@@ -52,9 +58,23 @@
                      <ChoiceBox fx:id="Ch_Prof5" layoutX="585.0" layoutY="245.0" prefHeight="26.0" prefWidth="212.0" />
                      <ChoiceBox fx:id="Ch_Prof6" layoutX="585.0" layoutY="282.0" prefHeight="26.0" prefWidth="212.0" />
                      <ChoiceBox fx:id="Ch_Prof7" layoutX="586.0" layoutY="316.0" prefHeight="26.0" prefWidth="212.0" />
-                     <Button fx:id="Btn_GuardarGrupo" layoutX="691.0" layoutY="388.0" mnemonicParsing="false" onAction="#B_GuardarGrupo" prefHeight="26.0" prefWidth="100.0" text="Guardar" />
-                     <Button fx:id="B_Regresa" layoutX="11.0" layoutY="388.0" mnemonicParsing="false" onAction="#B_Back" text="Regresar" />
-                     <Button fx:id="Btn_Crear" layoutX="186.0" layoutY="269.0" mnemonicParsing="false" onAction="#B_Crear" text="Crear" />
+                     <Button fx:id="Btn_GuardarGrupo" layoutX="691.0" layoutY="388.0" mnemonicParsing="false" onAction="#B_GuardarGrupo" prefHeight="26.0" prefWidth="100.0" style="-fx-border-color: #8A0CA9; -fx-background-color: #FFFF;" text="Guardar" textFill="#06802d">
+                        <font>
+                           <Font name="AnjaliOldLipi" size="14.0" />
+                        </font></Button>
+                     <Button fx:id="B_Regresa" layoutX="11.0" layoutY="388.0" mnemonicParsing="false" onAction="#B_Back" style="-fx-border-color: #8A0CA9; -fx-background-color: #FFFF;" text="Regresar">
+                        <font>
+                           <Font name="AnjaliOldLipi" size="14.0" />
+                        </font></Button>
+                     <Button fx:id="Btn_Crear" layoutX="159.0" layoutY="227.0" mnemonicParsing="false" onAction="#B_Crear" prefHeight="14.0" prefWidth="65.0" style="-fx-border-color: #8A0CA9; -fx-background-color: #FFFF;" text="Crear">
+                        <font>
+                           <Font name="AnjaliOldLipi" size="14.0" />
+                        </font></Button>
+                     <Label fx:id="Lbl_Grupo" layoutX="200.0" layoutY="22.0" text="1. Abrir un Nuevo Grupo:">
+                        <font>
+                           <Font name="AnjaliOldLipi" size="20.0" />
+                        </font>
+                     </Label>
                   </children>
                </AnchorPane>
             </children>

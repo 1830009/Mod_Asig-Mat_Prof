@@ -1,5 +1,6 @@
-package com.mycompany.app;
 //27419_JoséErnestoRamírezCervantes_Final
+package com.mycompany.app;
+
 public class Profesor {
     protected String Nombre, Clave,Tipo,Carrera_ID,Contrato,Grado;
     protected int HorasDisp,P_Confianza[]=new int[20];

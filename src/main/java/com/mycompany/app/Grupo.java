@@ -3,13 +3,20 @@ package com.mycompany.app;
 public class Grupo {
     protected String Grupo_ID,plan_ID;
     protected String Cuatrimestre;
-    protected String Prof[]=new String[7], Mat[]=new String[7];
+    protected String Prof, Mat;
+
+    public Grupo(String ID, String cuatri,String plan_ID,String prof,String mat) {
+        this.Grupo_ID = ID;
+        this.plan_ID = plan_ID;
+        this.Cuatrimestre = cuatri;
+        this.Prof=prof;
+        this.Mat=mat;
+    }
 
     public Grupo(String ID, String plan_ID, String cuatri) {
         this.Grupo_ID = ID;
         this.plan_ID = plan_ID;
         this.Cuatrimestre = cuatri;
-
     }
 
     public String getID() { return Grupo_ID; }
@@ -34,17 +41,17 @@ public class Grupo {
         Cuatrimestre = cuatri;
     }
 
-    public String[] getProf() {
+    public String getProf() {
         return Prof;
     }
 
-    public void setProf(String[] prof) {
+    public void setProf(String prof) {
         Prof = prof;
     }
 
-    public String[] getMat() {
+    public String getMat() {
         return Mat;
     }
 
-    public void setMat(String[] mat) {Mat = mat; }
+    public void setMat(String mat) {Mat = mat; }
 }

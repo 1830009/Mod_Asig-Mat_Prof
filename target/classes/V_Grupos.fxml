@@ -25,11 +25,7 @@
                             <TableColumn fx:id="C_Materia" prefWidth="168.0" text="Materia" />
                         </columns>
                     </TableView>
-                    <Button layoutX="97.0" layoutY="342.0" mnemonicParsing="false" onAction="#BL_Eliminar" prefHeight="32.0" prefWidth="88.0" style="-fx-background-color: #9243C0;" text="Eliminar" textAlignment="CENTER" textFill="WHITE">
-                        <font>
-                            <Font name="System Bold" size="13.0" />
-                        </font></Button>
-                    <Button layoutX="97.0" layoutY="386.0" mnemonicParsing="false" onAction="#BL_Modificar" prefHeight="32.0" prefWidth="88.0" style="-fx-background-color: #9243C0;" text="Modificar" textAlignment="CENTER" textFill="WHITE">
+                    <Button layoutX="64.0" layoutY="342.0" mnemonicParsing="false" onAction="#BL_Eliminar" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: #9243C0;" text="Eliminar Grupo" textAlignment="CENTER" textFill="WHITE">
                         <font>
                             <Font name="System Bold" size="13.0" />
                         </font></Button>
