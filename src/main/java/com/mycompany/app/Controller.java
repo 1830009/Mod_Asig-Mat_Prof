@@ -9,11 +9,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
 import java.io.IOException;
-import java.sql.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,9 +62,9 @@ public class Controller {
 
     @FXML
     public void initialize() throws SQLException {
-            Ini_TablaUsuario();
-            final ObservableList<Grupo> tablaPersonaSel = Tbl_Grupos.getSelectionModel().getSelectedItems();
-            tablaPersonaSel.addListener(selectorTablaUsuario);
+            this.Ini_TablaUsuario();
+            final ObservableList<Grupo> tablaGrupoSel = Tbl_Grupos.getSelectionModel().getSelectedItems();
+            tablaGrupoSel.addListener(selectorTablaGrupo);
 
     }
 
@@ -214,11 +212,11 @@ public class Controller {
      */
     public int posicion=0;
 
-    private final ListChangeListener<Grupo> selectorTablaUsuario = new ListChangeListener<Grupo>() {
+    private final ListChangeListener<Grupo> selectorTablaGrupo = new ListChangeListener<Grupo>() {
         @Override
-        public void onChanged(ListChangeListener.Change<? extends Grupo> c) { ponerUsuarioSelec(); }  };
+        public void onChanged(ListChangeListener.Change<? extends Grupo> c) { ponerGrupoSelec(); }  };
 
-    public Grupo getTablaUsuarioSeleccionada() {
+    public Grupo getTablaGrupoSelec() {
         if (Tbl_Grupos != null) {
             List<Grupo> tabla = Tbl_Grupos.getSelectionModel().getSelectedItems();
             if (tabla.size() == 1) {
@@ -229,8 +227,8 @@ public class Controller {
         return null;
     }
 
-    private void ponerUsuarioSelec() {
-        final Grupo user = getTablaUsuarioSeleccionada();
+    private void ponerGrupoSelec() {
+        final Grupo user = getTablaGrupoSelec();
         posicion = Lista_Grupo.indexOf(user);
 
         if (user != null) {
@@ -250,6 +248,7 @@ public class Controller {
         C_Profe.setCellValueFactory(new PropertyValueFactory<Grupo, String>("Prof"));
         Lista_Grupo=sqlClass.ConsultarGrupos();
         System.out.println("["+Lista_Grupo.get(0).Grupo_ID+" , "+Lista_Grupo.get(0).Cuatrimestre+"]");
+
         Tbl_Grupos.setItems(Lista_Grupo);
     }
     ObservableList<Grupo> Lista_Grupo= FXCollections.observableArrayList();
